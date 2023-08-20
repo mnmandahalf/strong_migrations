@@ -100,7 +100,6 @@ ActiveSupport.on_load(:active_record) do
 
   require_relative "strong_migrations/schema_dumper"
   ActiveRecord::SchemaDumper.prepend(StrongMigrations::SchemaDumper)
-  require "active_record/connection_adapters/mysql2/database_statements"
-  ActiveRecord::ConnectionAdapters::Mysql2::DatabaseStatements
-    .prepend(StrongMigrations::ConnectionAdapters::Mysql2::DatabaseStatements)
+  ActiveRecord::ConnectionAdapters::MySQL::DatabaseStatements
+    .prepend(StrongMigrations::ConnectionAdapters::MySQL::DatabaseStatements)
 end
