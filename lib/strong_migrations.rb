@@ -101,7 +101,6 @@ ActiveSupport.on_load(:active_record) do
 
   require_relative "strong_migrations/schema_dumper"
   ActiveRecord::SchemaDumper.prepend(StrongMigrations::SchemaDumper)
-  require "active_record/connection_adapters/mysql2_adapter"
   ActiveRecord::ConnectionAdapters::Mysql2Adapter
     .prepend(StrongMigrations::ConnectionAdapters::Mysql2Adapter)
 end
