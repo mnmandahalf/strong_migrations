@@ -30,13 +30,13 @@ module StrongMigrations
       end
 
       def is_target_for_check_online_ddl?(sql)
-        sql.upcase.include?('ALTER TABLE')
-          || sql.upcase.include?('CREATE INDEX')
-          || sql.upcase.include?('CREATE UNIQUE INDEX')
-          || sql.upcase.include?('CREATE FULLTEXT INDEX')
-          || sql.upcase.include?('CREATE SPATIAL INDEX')
-          || sql.upcase.include?('ALTER INDEX')
-          || sql.upcase.include?('DROP INDEX')
+        sql.upcase.include?('ALTER TABLE') ||
+          sql.upcase.include?('CREATE INDEX') ||
+          sql.upcase.include?('CREATE UNIQUE INDEX') ||
+          sql.upcase.include?('CREATE FULLTEXT INDEX') ||
+          sql.upcase.include?('CREATE SPATIAL INDEX') ||
+          sql.upcase.include?('ALTER INDEX') ||
+          sql.upcase.include?('DROP INDEX')
       end
     end
   end
