@@ -11,8 +11,9 @@ module StrongMigrations
 
       def add_lock_none(sql)
         if StrongMigrations.force_lock_none && sql.upcase.include?('ALTER TABLE')
-          "#{sql.chomp(";")}, LOCK=NONE;"
+          sql = "#{sql.chomp(";")}, LOCK=NONE;"
         end
+        sql
       end
     end
   end
