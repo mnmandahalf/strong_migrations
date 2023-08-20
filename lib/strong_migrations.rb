@@ -89,7 +89,6 @@ end
 # load error messages
 require_relative "strong_migrations/error_messages"
 
-require "active_record/connection_adapters/mysql2_adapter/database_statements"
 
 ActiveSupport.on_load(:active_record) do
   ActiveRecord::Migration.prepend(StrongMigrations::Migration)
@@ -102,5 +101,5 @@ ActiveSupport.on_load(:active_record) do
   require_relative "strong_migrations/schema_dumper"
   ActiveRecord::SchemaDumper.prepend(StrongMigrations::SchemaDumper)
   ActiveRecord::ConnectionAdapters::Mysql2Adapter::DatabaseStatements
-    .prepend(StrongMigrations::ConnectionAdapters::Mysql2Adapter::DatabaseStatements)
+    .prepend(StrongMigrations::ConnectionAdapters::Mysql2::DatabaseStatements)
 end
