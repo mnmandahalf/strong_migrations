@@ -1,6 +1,6 @@
 module StrongMigrations
   module ConnectionAdapters
-    module Mysql2Adapter
+    module Mysql2
       module DatabaseStatements
         def execute(sql, name = nil)
           add_lock_none!(sql)
