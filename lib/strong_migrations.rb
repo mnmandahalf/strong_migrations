@@ -30,7 +30,7 @@ module StrongMigrations
       :target_postgresql_version, :target_mysql_version, :target_mariadb_version,
       :enabled_checks, :lock_timeout, :statement_timeout, :check_down, :target_version,
       :safe_by_default, :target_sql_mode, :lock_timeout_retries, :lock_timeout_retry_delay,
-      :alphabetize_schema, :force_lock_none
+      :alphabetize_schema, :force_lock_none, :force_instant_ddl
     attr_writer :lock_timeout_limit
   end
   self.auto_analyze = false
@@ -42,6 +42,7 @@ module StrongMigrations
   self.check_down = false
   self.alphabetize_schema = false
   self.force_lock_none = false
+  self.force_instant_ddl = false
 
   # private
   def self.developer_env?
