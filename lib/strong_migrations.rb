@@ -89,6 +89,8 @@ end
 # load error messages
 require_relative "strong_migrations/error_messages"
 
+require "active_record/connection_adapters/mysql2_adapter/database_statements"
+
 ActiveSupport.on_load(:active_record) do
   ActiveRecord::Migration.prepend(StrongMigrations::Migration)
   ActiveRecord::Migrator.prepend(StrongMigrations::Migrator)
